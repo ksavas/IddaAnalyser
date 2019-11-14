@@ -32,7 +32,7 @@ Bir maç için çeşitli bahis platformları çeşitli oranlar verebilirler; ayn
 
 Uygulama geliştirme sürecinde maçların bütün oranlarının aynı olmasının maçların aynı şekilde bitmediğini gösterdiğinden dolayı farklı yaklaşımlar sürekli denenmiştir.
 
-Aylarca süren denemeler sonucunda birkaç farklı analizin sonuca götürmeye daha yakın olduğu kanısına varıldığı için, bu bölümde farklı farklı bir kaç operasyon yapılır ve hepsinin sonuçları farklı tablolara kaydedilir. Bu analizler:
+Aylarca süren denemeler sonucunda iki analizin doğru sonuca götürmeye daha yakın olduğu kanısına varıldığından dolayı bu bölümde farklı farklı bir kaç operasyon yapılır ve hepsinin sonuçları farklı tablolara kaydedilir. Bu analizler:
 - OddCombinations
 - PartialOdds
 
@@ -45,3 +45,11 @@ Oddcombinations verisine ulaşmak için 60,346 maçtan elde edilen, 28,431 adet 
 Uygulama OddCombination analizini yaparken bazen OddCombinatons tablosunda var olan OddCombination'lar bulabiliyor, bunlar'a update işlemi gerçekleştiriliyor ve update sonucunda değerleri değişen OddCombinationlar eğer ortak bir maç sonucu içermiyorsa veritabanından siliniyor.
 
 ##### PartialOdds
+OddCombinations'a bütün oranın parçalanmasının son evresi dersek, PartialOdds'a da ilk parçalama evresi demek bir hata olmaz. 
+
+PartialOdds'da yaklaşım; maçın bütün oranını, birbirini etkileyen oran parçalarına bölerek, bu parçaların oluşturduğu bütün permutasyonları deneyerek, aynı OddCombinations'da olduğu gibi, eğer bağlı oldukları maçlar arasında en azından bir ortak sonuç varsa o permutasyonu kaydetmektir.
+
+Örnek olarak, Ms1,Msx,Ms2 maç sonucuyla alakalı ve birbirini etkileyen oranlardır, aynı şekilde Mg+,Mg- karşılıklı gol ile alakalı oranlardır ve bunlarda birbirlerini etkiler. Bütün bir oranı bu şekilde bölmeye çalışırsak, ALLMS:Ms1,Msx,Ms2 ve ALLMG:Mg+,Mg- şeklinde bölebiliriz. Bütün bir oranı bu şekilde parçaladığımızda 11 tane ana başlıkla (ALLMS gibi) karşılaşıyoruz. Bunlarında permutasyonunu aldığımız zaman (2^11) 2048 tane permutasyona ulaşırız, sadece 11 permutasyondan hiçbirinin olmadığı "0-0-0-0-0-0-0-0-0-0-0-0" permutasyonunu çıkardığımız zaman 2047 permutasyona ulaşırız. Örnek permutasyonlar: ALLMS|ALLFH veya ALLMS|ALLMG|ALLDC veya ALLMS|ALLFH|ALLMG ... şeklindedir.
+
+PartialOdd'da maçlar ve oranlar bu şekilde ayrıştırılır ve bunun dışında OddCombinations'la aynı yaklaşım uygulanır.
+
