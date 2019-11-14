@@ -82,8 +82,7 @@ Store Limits  : Seçilen limitleri daimi olarak belirlemek için kullanılır.
 Reset Limits  : Limitleri varsayılan değerlerine getirmek için (Min:0, Max:int.Max) kullanılır.
 Clear Limits  : Limitleri varsayılan değerlerine getirir ama veritabanına o şekilde kaydetmez.
 
-#### Alt Bölüm
-<img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i6.png"><br>
+#### Alt Bölüm <br><img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i6.png"><br>
 Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok'tan aza doğru sıralıdır. Bulunan değeler:
 Given Result: Gelen sonuç.
 MCount: Maç sayısı.
