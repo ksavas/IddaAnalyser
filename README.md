@@ -53,3 +53,12 @@ PartialOdds'da yaklaşım; maçın bütün oranını, birbirini etkileyen oran p
 
 PartialOdd'da maçlar ve oranlar bu şekilde ayrıştırılır ve bunun dışında OddCombinations'la aynı yaklaşım uygulanır.
 
+### Analyse Tab 
+Uygulamanın, Yukarıda nasıl analiz edildiği anlatılan analiz sonuçlarının kullanıcı tarafından değerlendirme yaptığı bölümdür. Kullanıcı bu bölümü 2 amaç için kullanabilir:
+- Oynanmış maçları test ederek kendince analiz yapmak.
+- Oynanmamış maçlar üzerinde, analiz sonuçlarını değerlendirip, uygun gördüğü maçlara ve sonuçlarına bahis oynamak.
+
+Burada önemli nokta şudur, kullanıcı zaten veritabanında kayıtlı olan bir maçı test etmek isterse gelen sonuçlar arasında hiç yanlış cevap olmayacaktır. Buda kullancıyı hataya sürükleyebilir. Yani kullanıcı oynanmış maçlar üzerinde test yapmak istiyorsa o maçların veritabanına 'import edilmediğinden' emin olması gerekir.
+
+##### Store Tab Ekran Görüntüsü
+<img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i3.png"><br>
