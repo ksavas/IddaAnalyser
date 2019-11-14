@@ -6,12 +6,14 @@ Deneysel bir uygulama olup, daha çok programlama tekniklerini geliştirme, data
 %100 oranda asla tahmin edememekle beraber, kesinlikle kullanıldığında para kazandıramaz.
 
 ## Uygulama aşamaları
-Uygulama işlemlerini 2 ana bölüm altında gerçekleştirmektedir:
-
+Uygulama işlemlerini 2 ana bölüm altında gerçekleştirmektedir:<br>
 Store Tab<br>
 Analyse Tab
 
-Maç verilerini Kaydetmek<br>
-Maç verilerinin analiz sonuçlarını kaydetmek<br>
-Maçları analiz etmek
+### Store Tab <br>
+Uygulamanın veritabanı kayıt işlemlerinin olduğu bölümde denebilir, diğer analyse tab'da herhangibir veritabanı kayıt işlemi olmaz sadece okuma işlemi yapılır.<br>
+Bu bölümde 2 işlem yürütülmektedir:<br>
+- Maç verilerini dışardan veri tabanına kaydetmek<br>
+- Kaydedilen maçların analiz sonuçlarını kaydetmek
 
+#### Uygulama aşamaları
