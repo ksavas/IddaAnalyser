@@ -79,20 +79,20 @@ Kullanıcı, analiz ve değerlendirme yaparken sadece 1 maç oynanmış veya sad
 
 Buradaki (Result) değerleri ise OddCombination veya PartialOdd'lardan gelen sonuçlar ayrıca kaydedilir ve toplam Match ve FullOdd sayıları toplanır, onların değerlerine sınırlama getirmek için kullanılır. Aslında aşağıda bulunan, sonuçların listelendiği bölümü, filtreleme amacı için kullanıldığını söylemek daha doğru olacaktır.
 
-Analyse Again : Bir maç için çeşitli limitleri kullanıp tekrardan analiz etmek için kullanılır.
-Store Limits  : Seçilen limitleri daimi olarak belirlemek için kullanılır.
-Reset Limits  : Limitleri varsayılan değerlerine getirmek için (Min:0, Max:int.Max) kullanılır.
-Clear Limits  : Limitleri varsayılan değerlerine getirir ama veritabanına o şekilde kaydetmez.
+**Analyse Again** Bir maç için çeşitli limitleri kullanıp tekrardan analiz etmek için kullanılır.
+**Store Limits**  Seçilen limitleri daimi olarak belirlemek için kullanılır.
+**Reset Limits**  Limitleri varsayılan değerlerine getirmek için (Min:0, Max:int.Max) kullanılır.
+**Clear Limits**  Limitleri varsayılan değerlerine getirir ama veritabanına o şekilde kaydetmez.
 
 #### Alt Bölüm <br><img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i6.png"><br>
 Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok'tan aza doğru sıralıdır. Bulunan değeler:
-**Given Result**: Gelen sonuç.
-**MCount**: Maç sayısı.
-**FCount**: FullOdd sayısı.
+**Given Result** Gelen sonuç.<br>
+**MCount**       Maç sayısı.<br>
+**FCount**       FullOdd sayısı.<br>
 
-**Picked Matches**: kullanıcı bahis oynayacağı zaman ilgilendiği bir maçı daha sonra tekrar bakmak üzere seçmek istediği zaman 'Pick' butonuna tıklayarak PickedMatches grid'i içine atar daha sonra doğrudan ordan tıklayarak maça ulaşabilir. Kullanıcı isterse daha sonra seçtiği maçı 'UnPick' ederek grid'den kaldırabilir.
+**Picked Matches** kullanıcı bahis oynayacağı zaman ilgilendiği bir maçı daha sonra tekrar bakmak üzere seçmek istediği zaman 'Pick' butonuna tıklayarak PickedMatches grid'i içine atar daha sonra doğrudan ordan tıklayarak maça ulaşabilir. Kullanıcı isterse daha sonra seçtiği maçı 'UnPick' ederek grid'den kaldırabilir.
 
-**Analiz maçları listesi**: 'AnalysedMatches' tablosunda bulunan maçlar burada listelenir, Tarihlerine göre sıralıdırlar.
-**UnPlayed**: Sadece oynanmamış maçları gösterir.
-**Played**: Sadece oynanmış maçları gösterir.
+**Analiz maçları listesi** 'AnalysedMatches' tablosunda bulunan maçlar burada listelenir, Tarihlerine göre sıralıdırlar.<br>
+**UnPlayed** Sadece oynanmamış maçları gösterir.<br>
+**Played**   Sadece oynanmış maçları gösterir.<br>
 Kullanıcı isterse yukarıdaki textbox'a arama kriterlerini yazarak maçları filtreleyebilir.
