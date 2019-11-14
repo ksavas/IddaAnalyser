@@ -17,5 +17,10 @@ Bu bölümde 2 işlem yürütülmektedir:<br>
 ##### Store Tab Ekran Görüntüsü
 <img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i3.png"><br>
 #### Maç verilerinin dışarıdan kaydedilmesi
-Uygulama geliştirme süreci boyunca, oran analizleri üzerine çalışmalar yapıldığından dolayı, maç verilerinin uygulamaya aktarımı aşaması, ihtiyaçlara yeterli miktarda elverecek düzeye getirildikten sonra daha fazla geliştirilmemiştir.
-Maç verileri, çeşitli bahis sitelerinde halka açık şekilde verilen iddaa oranları sitelerden kopyalanarak belirli excel dosyasına yapıştırılır.
+Uygulama geliştirme süreci boyunca, oran analizleri üzerine çalışmalar yapıldığından dolayı, maç verilerinin uygulamaya aktarımı aşaması, ihtiyaçlara yeterli miktarda elverecek düzeye getirildikten sonra daha fazla geliştirilmemiştir.<br>
+
+Maç verileri, çeşitli bahis sitelerinde halka açık şekilde verilen iddaa oranları sitelerden kopyalanarak önceden belirlenmiş excel dosyasına yapıştırılır. Daha sonra Store Tab Ekran Görüntüsünde sol üst köşedeki Store Tuşuna tıklanıldığında, uygulama önceden belirlenmiş excel dosyasından maç verilerini alır ve veritabanına kaydeder.<br>
+
+Eğer uygulama geliştirilmeye devam etseydi, bir api'ye bağlanılarak veya çeşitli web servislerden faydalanılarak veriler doğrudan request ile alınması planlanıyordu.<br>
+
+#### Kaydedilen maçların analiz sonuçlarını kaydetmek
