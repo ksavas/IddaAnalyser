@@ -87,12 +87,12 @@ Buradaki (Result) değerleri ise OddCombination veya PartialOdd'lardan gelen son
 #### Alt Bölüm <br><img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i6.png"><br>
 Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok'tan aza doğru sıralıdır. Bulunan değeler:
 **Given Result**:Gelen sonuç.<br>
-**MCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maç sayısı.<br>
-**FCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FullOdd sayısı.<br>
+**MCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maç sayısı.<br>
+**FCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FullOdd sayısı.<br>
 
 **Picked Matches**, kullanıcı bahis oynayacağı zaman ilgilendiği bir maçı daha sonra tekrar bakmak üzere seçmek istediği zaman **Pick** butonuna tıklayarak PickedMatches grid'i içine atar daha sonra doğrudan ordan tıklayarak maça ulaşabilir. Kullanıcı isterse daha sonra seçtiği maçı **UnPick** ederek grid'den kaldırabilir.
 
 **Analiz maçları listesi** 'AnalysedMatches' tablosunda bulunan maçlar burada listelenir, Tarihlerine göre sıralıdırlar.<br>
-**UnPlayed**&nbsp;&nbsp;Sadece oynanmamış maçları gösterir.<br>
-**Played**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sadece oynanmış maçları gösterir.<br>
+**UnPlayed**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sadece oynanmamış maçları gösterir.<br>
+**Played**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sadece oynanmış maçları gösterir.<br>
 Kullanıcı isterse yukarıdaki textbox'a arama kriterlerini yazarak maçları filtreleyebilir.
