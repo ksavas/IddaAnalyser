@@ -82,7 +82,7 @@ Buradaki (Result) değerleri ise OddCombination veya PartialOdd'lardan gelen son
 **Analyse Again**&nbsp;Bir maç için çeşitli limitleri kullanıp tekrardan analiz etmek için kullanılır.<br>
 **Store Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seçilen limitleri daimi olarak belirlemek için kullanılır.<br>
 **Reset Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limitleri varsayılan değerlerine getirmek için (Min:0, Max:int.Max) kullanılır.<br>
-**Clear Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limitleri varsayılan değerlerine getirir ama veritabanına o şekilde kaydetmez.<br>
+**Clear Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limitleri varsayılan değerlerine getirir ama veritabanına o şekilde kaydetmez.<br>
 
 #### Alt Bölüm <br><img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i6.png"><br>
 Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok'tan aza doğru sıralıdır. Bulunan değeler:
