@@ -17,4 +17,5 @@ Bu bölümde 2 işlem yürütülmektedir:<br>
 ##### Store Tab Ekran Görüntüsü
 <img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i3.png"><br>
 #### Maç verilerinin dışarıdan kaydedilmesi
-Uygulama geliştirme süreci boyunca
+Uygulama geliştirme süreci boyunca, oran analizleri üzerine çalışmalar yapıldığından dolayı, maç verilerinin uygulamaya aktarımı aşaması, ihtiyaçlara yeterli miktarda elverecek düzeye getirildikten sonra daha fazla geliştirilmemiştir.
+Maç verileri, çeşitli bahis sitelerinde halka açık şekilde verilen iddaa oranları sitelerden kopyalanarak belirli excel dosyasına yapıştırılır.
