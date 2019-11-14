@@ -94,5 +94,5 @@ Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok't
 
 **Analiz maçları listesi** 'AnalysedMatches' tablosunda bulunan maçlar burada listelenir, Tarihlerine göre sıralıdırlar.<br>
 **UnPlayed**&nbsp;Sadece oynanmamış maçları gösterir.<br>
-**Played**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sadece oynanmış maçları gösterir.<br>
+**Played**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sadece oynanmış maçları gösterir.<br>
 Kullanıcı isterse yukarıdaki textbox'a arama kriterlerini yazarak maçları filtreleyebilir.
