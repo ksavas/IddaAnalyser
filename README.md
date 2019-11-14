@@ -38,6 +38,7 @@ Aylarca süren denemeler sonucunda iki analizin doğru sonuca götürmeye daha y
 
 #### OddCombinations
 Veritabanında kaydedildiği tablonun adıyla anılan 'OddCombinations' "eğer bir maç belirli sonuçlar için belirli oranları almış ise kesinlikle şu şekilde biter" düşüncesiyle geliştirilmiş bir analiz biçimidir.<br>
+
 Örnek olarak, x maçının Ms1:1.4, Ms2:1.75, Fhx:1.9, Mg+:2.00, 3.5-:1.35 oranlarını aldığını düşünelim, veritabanına kaydedilmiş maçlar arasından aynı sonuçlar için 5 tane maçın aynı oranları aldığını ve hepsinin mg+(Karşılıklı gol var) sonucuyla bittiğini görüyoruz. Bizde maçımıza mg+ sonucunu oynayıp, maçın aynı şekilde bitmesini ümit ediyoruz. 
 
 Oddcombinations verisine ulaşmak için 60,346 maçtan elde edilen, 28,431 adet oran bütününün hepsini teker teker birbirleriyle karşılaştırıp, oranlardaki benzerliklerin hepsini kaydettik, bunun sonucunda milyarlarca data üretildi, ancak aralarında benzerlik bulunan oran bütünlerinin bağlı oldukları maçların ortak bir sonucu yoksa o oran benzerliklerini(OddCombinations) sildik. Bu sayede OddCombinations sayısını milyarlardan 1,411,349 sayısına kadar indirmeyi başardık. 
@@ -71,6 +72,7 @@ Alt tarafta soldan sağa doğru: OddCombination sonuçları, PartialOddSonuçlar
 <img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i5.png"><br>
 
 OddCombination ve PartialOdd'ların nasıl çalıştığından yukarıda kısaca bahsetmiştik, burada yine kısa bir şekilde, limitlerin anlaşılması açısından, tekrar bahsedeceğiz.
+
 OddCombination değerleri veritabanı tasarımında 'FullOdd' adını verdiğimiz bütün oran değerlerinin bulunduğu tablo değerlerine bağlıdır: FullOdd tablosu içindeki her satırda 35 adet oranın tamamı bulunur. ve bu 35 orandan çıkan ve spesifik sonuca giden oran kombinasyonları(OddCombinations)'da dolayısıyla bu 35 oranı tutan ve aynı kombinasyonları tutan diğer FullOddlara bağlıdır. Aynı şekilde FullOdd'larda birebir aynı oranları alan maçlara bağlıdır.
 
 Kullanıcı, analiz ve değerlendirme yaparken sadece 1 maç oynanmış veya sadece 1 FullOdd'dan gelen sonuçların çok belirleyici olmayacağını düşünerek OddCombinations'da FullOdd ve Match için Min olarak 2 değerini seçer ve analiz sonuçlarını ona göre değerlendirebilir.
