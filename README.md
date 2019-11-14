@@ -60,5 +60,5 @@ Uygulamanın, Yukarıda nasıl analiz edildiği anlatılan analiz sonuçlarını
 
 Burada önemli nokta şudur, kullanıcı zaten veritabanında kayıtlı olan bir maçı test etmek isterse gelen sonuçlar arasında hiç yanlış cevap olmayacaktır. Buda kullancıyı hataya sürükleyebilir. Yani kullanıcı oynanmış maçlar üzerinde test yapmak istiyorsa o maçların veritabanına 'import edilmediğinden' emin olması gerekir.
 
-##### Store Tab Ekran Görüntüsü
-<img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i3.png"><br>
+##### Analyse Tab Ekran Görüntüsü
+<img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i4.png"><br>
