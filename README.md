@@ -1,4 +1,3 @@
-<a href="https://github.com/ksavas/IddaAnalyser/blob/master/README.en.md">English Readme</a>
 # IddaAnalyser
 
 C# programlama dili, entity framework, mssql server kullanılarak geliştirilmiş geçmiş idda oranlarındaki benzerlikleri analiz ederek, 
