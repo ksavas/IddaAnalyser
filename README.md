@@ -92,7 +92,7 @@ Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok't
 
 **Picked Matches**, kullanıcı bahis oynayacağı zaman ilgilendiği bir maçı daha sonra tekrar bakmak üzere seçmek istediği zaman **Pick** butonuna tıklayarak PickedMatches grid'i içine atar daha sonra doğrudan ordan tıklayarak maça ulaşabilir. Kullanıcı isterse daha sonra seçtiği maçı **UnPick** ederek grid'den kaldırabilir.
 
-<pre>**Analiz maçları listesi** 'AnalysedMatches' tablosunda bulunan maçlar burada listelenir, Tarihlerine göre sıralıdırlar.<br>
-**UnPlayed** Sadece oynanmamış maçları gösterir.<br>
-**Played**   Sadece oynanmış maçları gösterir.<br><pre>
+**Analiz maçları listesi** 'AnalysedMatches' tablosunda bulunan maçlar burada listelenir, Tarihlerine göre sıralıdırlar.<br>
+**UnPlayed**&nbsp;&nbsp; Sadece oynanmamış maçları gösterir.<br>
+**Played**&nbsp;&nbsp;   Sadece oynanmış maçları gösterir.<br>
 Kullanıcı isterse yukarıdaki textbox'a arama kriterlerini yazarak maçları filtreleyebilir.
