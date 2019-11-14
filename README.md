@@ -62,3 +62,18 @@ Burada önemli nokta şudur, kullanıcı zaten veritabanında kayıtlı olan bir
 
 ##### Analyse Tab Ekran Görüntüsü
 <img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i4.png"><br>
+
+Analyse Tab Ekran Görüntüsünde görüldüğü üzere, üst kısımda seçilmiş olan maç ve sonucu, OddCombination ve PartialOdd Limitleri, Limitleri resetleme kaydetme operasyonları yer alıyor.
+
+Alt tarafta soldan sağa doğru: OddCombination sonuçları, PartialOddSonuçları, OddCombination ve PartialOdd'dan gelen sonuçların kesişimi (intersection), Picked Matches ve analiz edilecek maçların listesi bulunuyor.
+
+##### OddCombination ve PartialOdd Limitleri
+<img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i5.png"><br>
+
+OddCombination ve PartialOdd'ların nasıl çalıştığından yukarıda kısaca bahsetmiştik, burada yine kısa bir şekilde, limitlerin anlaşılması açısından, tekrar bahsedeceğiz.
+OddCombination değerleri veritabanı tasarımında 'FullOdd' adını verdiğimiz bütün oran değerlerinin bulunduğu tablo değerlerine bağlıdır: FullOdd tablosu içindeki her satırda 35 adet oranın tamamı bulunur. ve bu 35 orandan çıkan ve spesifik sonuca giden oran kombinasyonları(OddCombinations)'da dolayısıyla bu 35 oranı tutan ve aynı kombinasyonları tutan diğer FullOddlara bağlıdır. Aynı şekilde FullOdd'larda birebir aynı oranları alan maçlara bağlıdır.
+
+Kullanıcı, analiz ve değerlendirme yaparken sadece 1 maç oynanmış veya sadece 1 FullOdd'dan gelen sonuçların çok belirleyici olmayacağını düşünerek OddCombinations'da FullOdd ve Match için Min olarak 2 değerini seçer ve analiz sonuçlarını ona göre değerlendirebilir.
+
+Buradaki (Result) değerleri ise OddCombination veya PartialOdd'lardan gelen sonuçlar ayrıca kaydedilir ve toplam Match ve FullOdd sayıları toplanır, onların değerlerine sınırlama getirmek için kullanılır. Aslında aşağıda bulunan, sonuçların listelendiği bölümü, filtreleme amacı için kullanıldığını söylemek daha doğru olacaktır.
+
