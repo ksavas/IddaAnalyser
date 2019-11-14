@@ -63,7 +63,7 @@ Uygulamanın, Yukarıda nasıl analiz edildiği anlatılan analiz sonuçlarını
 Burada önemli nokta şudur, kullanıcı zaten veritabanında kayıtlı olan bir maçı test etmek isterse gelen sonuçlar arasında hiç yanlış cevap olmayacaktır. Buda kullancıyı hataya sürükleyebilir. Yani kullanıcı oynanmış maçlar üzerinde test yapmak istiyorsa o maçların veritabanına 'import edilmediğinden' emin olması gerekir.
 
 #### Analyse Tab Ekran Görüntüsü
-<img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i4.png"><br>
+<img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i7.png"><br>
 
 Analyse Tab Ekran Görüntüsünde görüldüğü üzere, üst kısımda seçilmiş olan maç ve sonucu, OddCombination ve PartialOdd Limitleri, Limitleri resetleme kaydetme operasyonları yer alıyor.
 
@@ -85,7 +85,7 @@ Buradaki (Result) değerleri ise OddCombination veya PartialOdd'lardan gelen son
 **Reset Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limitleri varsayılan değerlerine getirmek için (Min:0, Max:int.Max) kullanılır.<br>
 **Clear Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limitleri varsayılan değerlerine getirir ama veritabanına o şekilde kaydetmez.<br>
 
-#### Alt Bölüm <br><img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i6.png"><br>
+#### Alt Bölüm <br><img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i8.png"><br>
 Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok'tan aza doğru sıralıdır. Bulunan değeler:
 **Given Result**&nbsp;&nbsp;&nbsp;Gelen sonuç.<br>
 **MCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maç sayısı.<br>
