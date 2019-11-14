@@ -36,7 +36,7 @@ Aylarca süren denemeler sonucunda iki analizin doğru sonuca götürmeye daha y
 - OddCombinations
 - PartialOdds
 
-##### OddCombinations
+#### OddCombinations
 Veritabanında kaydedildiği tablonun adıyla anılan 'OddCombinations' "eğer bir maç belirli sonuçlar için belirli oranları almış ise kesinlikle şu şekilde biter" düşüncesiyle geliştirilmiş bir analiz biçimidir.<br>
 Örnek olarak, x maçının Ms1:1.4, Ms2:1.75, Fhx:1.9, Mg+:2.00, 3.5-:1.35 oranlarını aldığını düşünelim, veritabanına kaydedilmiş maçlar arasından aynı sonuçlar için 5 tane maçın aynı oranları aldığını ve hepsinin mg+(Karşılıklı gol var) sonucuyla bittiğini görüyoruz. Bizde maçımıza mg+ sonucunu oynayıp, maçın aynı şekilde bitmesini ümit ediyoruz. 
 
@@ -44,7 +44,7 @@ Oddcombinations verisine ulaşmak için 60,346 maçtan elde edilen, 28,431 adet 
 
 Uygulama OddCombination analizini yaparken bazen OddCombinatons tablosunda var olan OddCombination'lar bulabiliyor, bunlar'a update işlemi gerçekleştiriliyor ve update sonucunda değerleri değişen OddCombinationlar eğer ortak bir maç sonucu içermiyorsa veritabanından siliniyor.
 
-##### PartialOdds
+#### PartialOdds
 OddCombinations'a bütün oranın parçalanmasının son evresi dersek, PartialOdds'a da ilk parçalama evresi demek bir hata olmaz. 
 
 PartialOdds'da yaklaşım; maçın bütün oranını, birbirini etkileyen oran parçalarına bölerek, bu parçaların oluşturduğu bütün permutasyonları deneyerek, aynı OddCombinations'da olduğu gibi, eğer bağlı oldukları maçlar arasında en azından bir ortak sonuç varsa o permutasyonu kaydetmektir.
@@ -60,14 +60,14 @@ Uygulamanın, Yukarıda nasıl analiz edildiği anlatılan analiz sonuçlarını
 
 Burada önemli nokta şudur, kullanıcı zaten veritabanında kayıtlı olan bir maçı test etmek isterse gelen sonuçlar arasında hiç yanlış cevap olmayacaktır. Buda kullancıyı hataya sürükleyebilir. Yani kullanıcı oynanmış maçlar üzerinde test yapmak istiyorsa o maçların veritabanına 'import edilmediğinden' emin olması gerekir.
 
-##### Analyse Tab Ekran Görüntüsü
+#### Analyse Tab Ekran Görüntüsü
 <img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i4.png"><br>
 
 Analyse Tab Ekran Görüntüsünde görüldüğü üzere, üst kısımda seçilmiş olan maç ve sonucu, OddCombination ve PartialOdd Limitleri, Limitleri resetleme kaydetme operasyonları yer alıyor.
 
 Alt tarafta soldan sağa doğru: OddCombination sonuçları, PartialOddSonuçları, OddCombination ve PartialOdd'dan gelen sonuçların kesişimi (intersection), Picked Matches ve analiz edilecek maçların listesi bulunuyor.
 
-##### OddCombination ve PartialOdd Limitleri
+#### OddCombination ve PartialOdd Limitleri
 <img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i5.png"><br>
 
 OddCombination ve PartialOdd'ların nasıl çalıştığından yukarıda kısaca bahsetmiştik, burada yine kısa bir şekilde, limitlerin anlaşılması açısından, tekrar bahsedeceğiz.
@@ -82,7 +82,7 @@ Store Limits  : Seçilen limitleri daimi olarak belirlemek için kullanılır.
 Reset Limits  : Limitleri varsayılan değerlerine getirmek için (Min:0, Max:int.Max) kullanılır.
 Clear Limits  : Limitleri varsayılan değerlerine getirir ama veritabanına o şekilde kaydetmez.
 
-##### Alt Bölüm
+#### Alt Bölüm
 <img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i6.png"><br>
 Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok'tan aza doğru sıralıdır. Bulunan değeler:
 Given Result: Gelen sonuç.
