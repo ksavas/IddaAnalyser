@@ -6,95 +6,98 @@ A C# form application was developed by c# programming language, entity framework
 
 İt's an experimental application, the main purposes for the development of this application are, improving programming techniques and implementing database operations. The applications never provides 100% prediction and you can't exactly gain money by using this application.
 
-## Uygulama aşamaları
-Uygulama işlemlerini 2 ana bölüm altında gerçekleştirmektedir:<br>
+## Application stages
+The application performs actions in 2 parts:<br>
 Store Tab<br>
 Analyse Tab
 
 ### Store Tab 
-Uygulamanın veritabanı kayıt işlemlerinin olduğu bölümde denebilir, diğer analyse tab'da herhangibir veritabanı kayıt işlemi olmaz sadece okuma işlemi yapılır.<br>
-Bu bölümde 2 işlem yürütülmektedir:<br>
-- Maç verilerini dışardan veri tabanına kaydetmek<br>
-- Kaydedilen maçların analiz sonuçlarını kaydetmek
-##### Store Tab Ekran Görüntüsü
+All database store operations of the application are run in this tab. There is no any database store operation in the other analyse tab, the analyse tab only performs read operations.<br>
+2 operations are applied in this tab:<br>
+- Storing Match data into database from the external source.<br>
+- Storing the analyse results of the stored matches.
+##### Screenshot of the Store Tab
 <img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i3.png"><br>
-#### Maç verilerinin dışarıdan kaydedilmesi
-Uygulama geliştirme süreci boyunca, oran analizleri üzerine çalışmalar yapıldığından dolayı, maç verilerinin uygulamaya aktarımı aşaması, ihtiyaçlara yeterli miktarda elverecek düzeye getirildikten sonra daha fazla geliştirilmemiştir.<br>
+#### Storing Match data into database from the external source
+the process of the transfering the match data to appliaction has not been further developed after it has been brought to a sufficient level to meet the needs because of the focused operation is the odd analysing.<br>
 
-Maç verileri, çeşitli bahis sitelerinde halka açık şekilde verilen iddaa oranları sitelerden kopyalanarak önceden belirlenmiş excel dosyasına yapıştırılır. Daha sonra Store Tab Ekran Görüntüsünde sol üst köşedeki Store Tuşuna tıklanıldığında, açılan diyalog kutusundan  önceden belirlenmiş excel dosyası seçilir maç verilerini alır ve veritabanında 'AnalysedMatches' tablosuna kaydeder.<br>
+The match data is copied from public odd values of various iddaa bet web sites and pasted to predetermined excel file. After that pushing "Store" button on the top-left of the store tab of the application opens a dialog box to decide which excel file do you wan to use. The user selects the predetermined and then the application fetch the match values from the excel file to store the "AnalysedMatches" table of the database.<br>
 
-Eğer uygulama geliştirilmeye devam etseydi, bir api'ye bağlanılarak veya çeşitli web servislerden faydalanılarak veriler doğrudan request ile alınması planlanıyordu.<br>
+The future work of this application, I mean if the application had continued to be developed, the data is gotten by connecting some api or requesting some web services.<br>
 
-#### Kaydedilen maçların analiz sonuçlarını kaydetmek
-Aslında burada 'Store Tab Ekran Görüntüsü'nde sol üst köşede 'Store' butonu yanında yer alan 'Import' butonuna basıldığında yapılan işlemler anlatılıyor. 
+#### Storing the analyse results of the stored matches.
+Actually the title of this part explains the process of what happens when user pushes the import button of the store tab next to store button. 
 
-Import butonunun çalışma prensibi, Tarihlerin bulunduğu combobox'dan oynanmış ve sonuçları alınmış maçların olduğu bir tarih seçilir, o tarihteki maçlar listelenir, 'Import' tuşuna basıldığında seçilen maçları, önce analiz eder ve sonuçlarını kaydeder, ardından maçları  'AnalysedMatches' tablosundan alıp, Esas tablo'muz olan 'Matches' tablosonua uygun bir şekilde kaydeder daha sonrada seçilen maçları 'analysedMatches' tablosundan siler. Artık maçlarımız analiz aşamasına hizmet etmeye başlamıştır.
+The working principle of the import button is the user selects a date the from combobox that holds the dates of AnalysedMatches in the database, after selecting the date the matches of this date are listed in the gridview as you see in the figure at above. When matches are listed user clicks the import button.<br>
+When user clicks the import button the application analyses the selected AnalysedMatches, stores the analyse results of this matches then stores the selected AnalysedMatches to the Matches table that is our main table for matches and removes the selected AnalysedMatches from the table AnalysedMatches respectively. After that operation, now the selected analysed matches serves to the analyse part of the application.
 
-Bir maç için çeşitli bahis platformları çeşitli oranlar verebilirler; aynı sonuç için farklı oranlar verebilirler, birinin oran verdiği bir sonuca bir başkası oran vermeyebilir, ilk taç atışını hangi takım yapar vs. şeklinde uçuk bahisler için bile oranlar verilebilir. Bu kapsamda uygulama geliştirilirken genel olarak her bahis platformunun bir maça kesin olarak verdiği 35 farklı sonuç türünün oranları üzerinden denemeler yapıldı.
+The various bet companies have various bet values for same result of the specific soccer match. One bet company opens a bet for some situations but another bet company doesn't open a bet for the same situation. The bet companies open a bet for extreme predictions such as Which team will be the first to take a throw-in etc. In this scope I focused to the 35 different result type of match that is opened by almost every bet companies and the experiments were done for these 35 different result type.
 
-Uygulama geliştirme sürecinde maçların bütün oranlarının aynı olmasının maçların aynı şekilde bitmediğini gösterdiğinden dolayı farklı yaklaşımlar sürekli denenmiştir.
+I faced with whether the matches have same odds for the 35 different result type but doesn't have same scores, so i focused different approaches to gain same scores for matches. 2 analyses have approached to the purpose. These analyses are:
 
-Aylarca süren denemeler sonucunda iki analizin doğru sonuca götürmeye daha yakın olduğu kanısına varıldığından dolayı bu bölümde farklı farklı bir kaç operasyon yapılır ve hepsinin sonuçları farklı tablolara kaydedilir. Bu analizler:
 - OddCombinations
 - PartialOdds
 
 #### OddCombinations
-Veritabanında kaydedildiği tablonun adıyla anılan 'OddCombinations' "eğer bir maç belirli sonuçlar için belirli oranları almış ise kesinlikle şu şekilde biter" düşüncesiyle geliştirilmiş bir analiz biçimidir.<br>
+The name of the OddCombinations has come from the table name of the saved values. The main motivation of the OddCombinations is the idea of "If a match has some specific odds for the specific result types, the match definitely ends with this score".<br>
 
-Örnek olarak, x maçının Ms1:1.4, Ms2:1.75, Fhx:1.9, Mg+:2.00, 3.5-:1.35 oranlarını aldığını düşünelim, veritabanına kaydedilmiş maçlar arasından aynı sonuçlar için 5 tane maçın aynı oranları aldığını ve hepsinin mg+(Karşılıklı gol var) sonucuyla bittiğini görüyoruz. Bizde maçımıza mg+ sonucunu oynayıp, maçın aynı şekilde bitmesini ümit ediyoruz. 
+For example, lets suppose the 'x' match has Ms1:1.4, Ms2:1.75, Fhx:1.9, Mg+:2.00, 3.5-:1.35 values, we see 5 matches in the Matches table that holds the past matches has same odds for same result types and these all 5 matches end with mutual goal result type. In this situation we bet for mutual goal exist result and hope for both teams to score.
 
-Oddcombinations verisine ulaşmak için 60,346 maçtan elde edilen, 28,431 adet oran bütününün hepsini teker teker birbirleriyle karşılaştırıp, oranlardaki benzerliklerin hepsini kaydettim, bunun sonucunda milyarlarca data üretildi, ancak aralarında benzerlik bulunan oran bütünlerinin bağlı oldukları maçların ortak bir sonucu yoksa o oran benzerliklerini(OddCombinations) sildim. Bu sayede OddCombinations sayısını milyarlardan 1,411,349 sayısına kadar indirebildim. 
+I compared similarities of 28,431 FullOdd(means 35 odd as one piece) thats is obtained from 60,346 matches with each other one by one and stored them to the database. After this operation we had billions of OddCombination but when we filtered OddCombinations that don't have intersected results (For example an OddCombination has 45 match but all af them have different result types) I achieved the decrease the OddCombination count from billions to 1,411,349.
 
-Uygulama OddCombination analizini yaparken bazen OddCombinatons tablosunda var olan OddCombination'lar bulabiliyor, bunlar'a update işlemi gerçekleştiriliyor ve update sonucunda değerleri değişen OddCombinationlar eğer ortak bir maç sonucu içermiyorsa veritabanından siliniyor.
+While the application analysing the OddCombinations sometimes finds existing OddCombinations in the database. When it finds existing OddCombinations it updates the OddCombinations matches, results etc. and if updated OddCombination has no intersected result the OddCombination is removed from the database.
 
 #### PartialOdds
-OddCombinations'a bütün oranın parçalanmasının son evresi dersek, PartialOdds'a da ilk parçalama evresi demek bir hata olmaz. 
+If the OddCombination is the final stage of the division of FullOdd then the PartialOdd is the first stage of the division.
 
-PartialOdds'da yaklaşım; maçın bütün oranını, birbirini etkileyen oran parçalarına bölerek, bu parçaların oluşturduğu bütün permutasyonları deneyerek, aynı OddCombinations'da olduğu gibi, eğer bağlı oldukları maçlar arasında en azından bir ortak sonuç varsa o permutasyonu kaydetmektir.
+The approach of the PartialOdd is, dividing the FullOdd to the odd groups that effects each other. Trying all permutations of this group. If the matches thats relational for the one of the permutation of the groups has at least one intersected result type storing that permutation.
 
-Örnek olarak, Ms1,Msx,Ms2 maç sonucuyla alakalı ve birbirini etkileyen oranlardır, aynı şekilde Mg+,Mg- karşılıklı gol ile alakalı oranlardır ve bunlarda birbirlerini etkiler. Bütün bir oranı bu şekilde bölmeye çalışırsak, ALLMS:Ms1,Msx,Ms2 ve ALLMG:Mg+,Mg- şeklinde bölebiliriz. Bütün bir oranı bu şekilde parçaladığımızda 11 tane ana başlıkla (ALLMS gibi) karşılaşıyoruz. Bunlarında permutasyonunu aldığımız zaman (2<sup>11</sup>) 2048 tane permutasyona ulaşırız, sadece 11 permutasyondan hiçbirinin olmadığı "0-0-0-0-0-0-0-0-0-0-0-0" permutasyonunu çıkardığımız zaman 2047 permutasyona ulaşırız. Örnek permutasyonlar: ALLMS|ALLFH veya ALLMS|ALLMG|ALLDC veya ALLMS|ALLFH|ALLMG ... şeklindedir.
+For Example; Ms1,Msx,Ms2 is a effected odds about match score, and Mg+,Mg- is also effected odds about mutual goal. If we want to divide the FullOdd as this approach we can say ALLMS:Ms1,Msx,Ms2 and ALLMG: Mg+,Mg- etc. If we divide FullOdd like this we can have 11 Main header (ALLMS, ALLMG, etc.) and when we the permutations of this ordered headers we will hav (2^11) 2048 permutation. i.e. ALLMS|ALLFH or ALLMS|ALLMG|ALLDC or ALLMS|ALLFH|ALLMG.
 
-PartialOdd'da maçlar ve oranlar bu şekilde ayrıştırılır ve bunun dışında OddCombinations'la aynı yaklaşım uygulanır.
+I've divided FullOdd in this way for PartialOdd except this approach all process is same with OddCombination.
 
 ### Analyse Tab 
-Uygulamanın, Yukarıda nasıl analiz edildiği anlatılan analiz sonuçlarının kullanıcı tarafından değerlendirme yaptığı bölümdür. Kullanıcı bu bölümü 2 amaç için kullanabilir:
-- Oynanmış maçları test ederek egzersiz yapmak.
-- Oynanmamış maçlar üzerinde, analiz sonuçlarını değerlendirip, uygun gördüğü maçlara ve sonuçlarına bahis oynamak.
+We've tried to explain how is analysing done and how to store matches shortly. The analyse tab is the evaluating the analyse result by user part of the application. The user uses this part for 2 purposes:
+- Exercising on played matches.
+- Evaluating the analyse results on unplayed matches and putting a bet for appropriate matches.
 
-Burada önemli nokta şudur, kullanıcı zaten veritabanında kayıtlı olan bir maçı test etmek isterse gelen sonuçlar arasında hiç yanlış cevap olmayacaktır. Buda kullancıyı hataya sürükleyebilir. Yani kullanıcı oynanmış maçlar üzerinde test yapmak istiyorsa o maçların veritabanına 'import edilmediğinden' emin olması gerekir.
+One of the important points of this tab is if the user wants to evaluate a match thats already stored in Matches table, all analyse results about a match will be true and the user never finds a wrong score prediction about the match. This situation increases the confidens about this application and cause for mistakes. So if the user want to evaluate a match he/she have to be sure that the 
+match hasn't been stored to the database Matches table.
 
-#### Analyse Tab Ekran Görüntüsü
+#### A screenshot from Analyse Tab
 <img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i7.png"><br>
 
-Analyse Tab Ekran Görüntüsünde görüldüğü üzere, üst kısımda seçilmiş olan maç ve sonucu, OddCombination ve PartialOdd Limitleri, Limitleri resetleme kaydetme operasyonları yer alıyor.
+As you see in the Analyse tab screenshot the upside part of the UI has these elements: Selected match and its scores, OddCombination and PartialOdd limits, Reseting/saving limits etc.
 
-Alt tarafta soldan sağa doğru: OddCombination sonuçları, PartialOddSonuçları, OddCombination ve PartialOdd'dan gelen sonuçların kesişimi (intersection), Picked Matches ve analiz edilecek maçların listesi bulunuyor.
+The underpart of the UI has these elements from left to right: OddCombination results, PartialOdd results, The intersection of OddCombination and PartialOdd results, picked matches, and the list of the analysed matches.
 
-#### OddCombination ve PartialOdd Limitleri
+#### Limits of OddCombination PartialOdd
 <img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i5.png"><br>
 
-OddCombination ve PartialOdd'ların nasıl çalıştığından yukarıda kısaca bahsetmiştik, burada yine kısa bir şekilde, limitlerin anlaşılması açısından, tekrar bahsedeceğiz.
+We have explanied the working mechanism of the OddCombination and PartialOdd as you see in above. We will explain it again to understand the limits.
 
-OddCombination değerleri veritabanı tasarımında 'FullOdd' adını verdiğimiz bütün oran değerlerinin bulunduğu tablo değerlerine bağlıdır: FullOdd tablosu içindeki her satırda 35 adet oranın tamamı bulunur. ve bu 35 orandan çıkan ve spesifik sonuca giden oran kombinasyonları(OddCombinations)'da dolayısıyla bu 35 oranı tutan ve aynı kombinasyonları tutan diğer FullOddlara bağlıdır. Aynı şekilde FullOdd'larda birebir aynı oranları alan maçlara bağlıdır.
+The OddCombination and FullOdd table have many-to-many relation. FullOdd values have all of the 35 odds as one piece. The OddCombinations that comes up from FullOdd specific odd values are related to the FullOdd and also FullOdds are related to the OddCombinations and  FullOdds also related to the matches that has related FullOdd.
 
-Kullanıcı, analiz ve değerlendirme yaparken sadece 1 maç oynanmış veya sadece 1 FullOdd'dan gelen sonuçların çok belirleyici olmayacağını düşünerek OddCombinations'da FullOdd ve Match için Min olarak 2 değerini seçer ve analiz sonuçlarını ona göre değerlendirebilir.
+When user analysing a match he/she may think the OddCombinations which have only 1 match or 1 FullOdd are not decisive for predicting the result. So the user specifies the min value of both match and FullOdd count as 2 and analyses according to the this analyse results.
 
-Buradaki (Result) değerleri ise OddCombination veya PartialOdd'lardan gelen sonuçlar ayrıca kaydedilir ve toplam Match ve FullOdd sayıları toplanır, onların değerlerine sınırlama getirmek için kullanılır. Aslında aşağıda bulunan, sonuçların listelendiği bölümü, filtreleme amacı için kullanıldığını söylemek daha doğru olacaktır.
+The (Result)s are about filtering the analyse result of the under part. The output results are also grouped by Match and FullOdd count. For example, an OddCombination gives Ms1 and Mg+ as an output and another OddCombination gives Ms2 and Mg+ as an output. The application groups the results in different collection such as: [{Ms1:OddCombination1},{Ms2:OddCombination2},{Mg+:OddCombination1,OddCombination2}]
+and reaches the FullOdd and matches via OddCombinations. So you might want to see Results between 10-50 Match or FullOddCount in the output results. So thats are used for filtering.
 
-**Analyse Again**&nbsp;Bir maç için çeşitli limitleri kullanıp tekrardan analiz etmek için kullanılır.<br>
-**Store Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seçilen limitleri daimi olarak belirlemek için kullanılır.<br>
-**Reset Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limitleri varsayılan değerlerine getirmek için (Min:0, Max:int.Max) kullanılır.<br>
-**Clear Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limitleri varsayılan değerlerine getirir ama veritabanına o şekilde kaydetmez.<br>
+**Analyse Again**&nbsp;Used when you change the limits and analyse again.<br>
+**Store Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used when you change the limits and store it permanently.<br>
+**Reset Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used for Changing the limits to the default values (Min:0,Max:int.Max).<br>
+**Clear Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Changes the limits to the default values but doesn't store.<br>
 
-#### Alt Bölüm <br><img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i8.png"><br>
-Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok'tan aza doğru sıralıdır. Başlıklar:<br>
-**Given Result**&nbsp;&nbsp;&nbsp;Gelen sonuç.<br>
-**MCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maç sayısı.<br>
-**FCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FullOdd sayısı.<br>
+#### Under Part <br><img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i8.png"><br>
+Here, the output results that are coming from OddCombination and PartialOdds are listed. The list in descending order. The Headers:<br>
+**Given Result**&nbsp;&nbsp;&nbsp;The output result.<br>
+**MCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Match count.<br>
+**FCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FullOdd count.<br>
 
-**Picked Matches**, kullanıcı bahis oynayacağı zaman ilgilendiği bir maçı daha sonra tekrar bakmak üzere seçmek istediği zaman **Pick** butonuna tıklayarak PickedMatches grid'i içine atar daha sonra doğrudan ordan tıklayarak maça ulaşabilir. Kullanıcı isterse daha sonra seçtiği maçı **UnPick** ederek grid'den kaldırabilir.
+**Picked Matches**, when user wishes to select a match he/she is interested in and want to look it again later, he/she will click on the **Pick** button and puts the match into PickedMatches grid. Then when she/he wants to look again to the match the user clicks the match from the Pciked matches and reaches to the match directly. If the user wants to the remove the picked match from picked matches he/she clicks the **UnPick** button to remove it from grid.
 
-**Analiz maçları listesi** 'AnalysedMatches' tablosunda bulunan maçlar burada listelenir, Tarihlerine göre sıralıdırlar.<br>
-**UnPlayed**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sadece oynanmamış maçları gösterir.<br>
-**Played**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sadece oynanmış maçları gösterir.<br>
-Kullanıcı isterse yukarıdaki textbox'a arama kriterlerini yazarak maçları filtreleyebilir.
+**AnalysedMatches list** The list of the matches that are stored in the AnalysedMatches table. Ther are ordered by their dates.<br>
+**UnPlayed**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lists unplayed matches.<br>
+**Played**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lists played matches.<br>
+If the user wants to search a specific team name, match code etc. the user can use the text box on the analysed matches list.
+
