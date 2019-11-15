@@ -86,7 +86,7 @@ Buradaki (Result) değerleri ise OddCombination veya PartialOdd'lardan gelen son
 **Clear Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limitleri varsayılan değerlerine getirir ama veritabanına o şekilde kaydetmez.<br>
 
 #### Alt Bölüm <br><img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i8.png"><br>
-Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok'tan aza doğru sıralıdır. Başlıklar:
+Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok'tan aza doğru sıralıdır. Başlıklar:<br>
 **Given Result**&nbsp;&nbsp;&nbsp;Gelen sonuç.<br>
 **MCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maç sayısı.<br>
 **FCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FullOdd sayısı.<br>
