@@ -30,7 +30,7 @@ Aslında burada 'Store Tab Ekran Görüntüsü'nde sol üst köşede 'Store' but
 
 Import butonunun çalışma prensibi, Tarihlerin bulunduğu combobox'dan oynanmış ve sonuçları alınmış maçların olduğu bir tarih seçilir, o tarihteki maçlar listelenir, 'Import' tuşuna basıldığında seçilen maçları, önce analiz eder ve sonuçlarını kaydeder, ardından maçları  'AnalysedMatches' tablosundan alıp, Esas tablo'muz olan 'Matches' tablosonua uygun bir şekilde kaydeder daha sonrada seçilen maçları 'analysedMatches' tablosundan siler. Artık maçlarımız analiz aşamasına hizmet etmeye başlamıştır.
 
-Bir maç için çeşitli bahis platformları çeşitli oranlar verebilirler; aynı sonuç için farklı oranlar verebilirler, birinin oran verdiği bir sonuca bir başkası oran vermeyebilir, ilk taç atışını hangi takım yapar vs. şeklinde uçuk bahisler için bile oranlar verilebilir. Bu kapsamda uygulama geliştirilirken genel olarak her bahis platformunun bir maça kesin olarak verdiği 35 farklı sonuç türünün oranları üzerinden denemeler yapıldı.
+Bir maç için çeşitli yasal bahis platformları çeşitli oranlar verebilirler; aynı sonuç için farklı oranlar verebilirler, birinin oran verdiği bir sonuca bir başkası oran vermeyebilir, ilk taç atışını hangi takım yapar vs. şeklinde uçuk bahisler için bile oranlar verilebilir. Bu kapsamda uygulama geliştirilirken genel olarak her bahis platformunun bir maça kesin olarak verdiği 35 farklı sonuç türünün oranları üzerinden denemeler yapıldı.
 
 Uygulama geliştirme sürecinde maçların bütün oranlarının aynı olmasının maçların aynı şekilde bitmediğini gösterdiğinden dolayı farklı yaklaşımlar sürekli denenmiştir.
 
