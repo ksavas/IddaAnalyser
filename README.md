@@ -1,5 +1,7 @@
 # IddaAnalyser
 
+[English](https://github.com/ksavas/IddaAnalyser/edit/master/README.en.md)
+
 C# programlama dili, entity framework, mssql server kullanılarak geliştirilmiş geçmiş idda oranlarındaki benzerlikleri analiz ederek, 
 üzerine bahis oynanacak maçın sonucunu, maçın oranlarını analiz sonuçlarına göre geçmişteki oranlarla karşılaştırarak, tahmin eden bir c# form uygulaması.
 
