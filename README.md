@@ -42,7 +42,7 @@ Veritabanında kaydedildiği tablonun adıyla anılan 'OddCombinations' "eğer b
 
 Örnek olarak, x maçının Ms1:1.4, Ms2:1.75, Fhx:1.9, Mg+:2.00, 3.5-:1.35 oranlarını aldığını düşünelim, veritabanına kaydedilmiş maçlar arasından aynı sonuçlar için 5 tane maçın aynı oranları aldığını ve hepsinin mg+(Karşılıklı gol var) sonucuyla bittiğini görüyoruz. Bizde maçımıza mg+ sonucunu oynayıp, maçın aynı şekilde bitmesini ümit ediyoruz. 
 
-Oddcombinations verisine ulaşmak için 60,346 maçtan elde edilen, 28,431 adet oran bütününün hepsini teker teker birbirleriyle karşılaştırıp, oranlardaki benzerliklerin hepsini kaydettik, bunun sonucunda milyarlarca data üretildi, ancak aralarında benzerlik bulunan oran bütünlerinin bağlı oldukları maçların ortak bir sonucu yoksa o oran benzerliklerini(OddCombinations) sildik. Bu sayede OddCombinations sayısını milyarlardan 1,411,349 sayısına kadar indirmeyi başardık. 
+Oddcombinations verisine ulaşmak için 60,346 maçtan elde edilen, 28,431 adet oran bütününün hepsini teker teker birbirleriyle karşılaştırıp, oranlardaki benzerliklerin hepsini kaydettim, bunun sonucunda milyarlarca data üretildi, ancak aralarında benzerlik bulunan oran bütünlerinin bağlı oldukları maçların ortak bir sonucu yoksa o oran benzerliklerini(OddCombinations) sildim. Bu sayede OddCombinations sayısını milyarlardan 1,411,349 sayısına kadar indirebildim. 
 
 Uygulama OddCombination analizini yaparken bazen OddCombinatons tablosunda var olan OddCombination'lar bulabiliyor, bunlar'a update işlemi gerçekleştiriliyor ve update sonucunda değerleri değişen OddCombinationlar eğer ortak bir maç sonucu içermiyorsa veritabanından siliniyor.
 
@@ -86,7 +86,7 @@ Buradaki (Result) değerleri ise OddCombination veya PartialOdd'lardan gelen son
 **Clear Limits**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limitleri varsayılan değerlerine getirir ama veritabanına o şekilde kaydetmez.<br>
 
 #### Alt Bölüm <br><img src="https://raw.githubusercontent.com/ksavas/IddaAnalyser/master/SS/i8.png"><br>
-Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok'tan aza doğru sıralıdır. Bulunan değeler:
+Burada OddCombination ve PartialOdd'dan gelen sonuçlar listelenir. Liste çok'tan aza doğru sıralıdır. Başlıklar:
 **Given Result**&nbsp;&nbsp;&nbsp;Gelen sonuç.<br>
 **MCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maç sayısı.<br>
 **FCount**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FullOdd sayısı.<br>
