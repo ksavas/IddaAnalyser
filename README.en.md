@@ -1,6 +1,6 @@
 # IddaAnalyser
 
-[Turkish](https://github.com/ksavas/IddaAnalyser/edit/master/README.md)
+[Türkçe](https://github.com/ksavas/IddaAnalyser/edit/master/README.md)
 
 A C# form application was developed by c# programming language, entity framework, mssql server that is used for analysing the similarities of the past iddaa odd values and predicting the current match score for bet according to the past analyse results.
 
